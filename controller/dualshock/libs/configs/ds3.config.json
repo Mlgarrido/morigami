@@ -1,0 +1,244 @@
+{
+    "vendorId" : 1356,
+    "productId" : 616,
+    "analogSticks" : [
+        {
+            "name" : "left",
+            "x" : 6,
+            "y" : 7,
+            "joystickXNumber" : 0,
+            "joystickYNumber" : 1
+        },
+        {
+            "name" : "right",
+            "x" : 8,
+            "y" : 9,
+            "joystickXNumber" : 2,
+            "joystickYNumber" : 3
+        }
+    ],
+    "buttons" : [
+        {
+            "name": "l2",
+            "block": 3,
+            "value": "0x01",
+            "analogPin" : 18,
+            "joystick": 8
+        },
+        {
+            "name": "r2",
+            "block": 3,
+            "value": "0x02",
+            "analogPin" : 19,
+            "joystick" : 9
+        },
+        {
+            "name": "l1",
+            "block": 3,
+            "value": "0x04",
+            "analogPin" : 20,
+            "joystick" : 10
+        },
+        {
+            "name":"r1",
+            "block": 3,
+            "value": "0x08",
+            "analogPin" : 21,
+            "joystick" : 11
+        },
+        {
+            "name": "triangle",
+            "block": 3,
+            "value": "0x10",
+            "analogPin" : 22,
+            "joystick" : 12
+        },
+        {
+            "name": "circle",
+            "block": 3,
+            "value": "0x20",
+            "analogPin" : 23,
+            "joystick" : 13
+        },
+        {
+            "name": "x",
+            "block": 3,
+            "value": "0x40",
+            "analogPin" : 24,
+            "joystick" : 14
+        },
+        {
+            "name": "square",
+            "block": 3,
+            "value": "0x80",
+            "analogPin": 25,
+            "joystick" : 15
+        },
+        {
+            "name": "select",
+            "block": 2,
+            "value": "0x1",
+            "joystick" : 0
+        },
+        {
+            "name": "leftAnalogBump",
+            "block": 2,
+            "value": "0x2",
+            "joystick" : 1
+        },
+        {
+            "name": "rightAnalogBump",
+            "block": 2,
+            "value": "0x4",
+            "joystick" : 2
+        },
+        {
+            "name": "start",
+            "block": 2,
+            "value": "0x08",
+            "joystick" : 3
+        },
+        {
+            "name": "dpadUp",
+            "block": 2,
+            "value": "0x10",
+            "analogPin": 14,
+            "joystick" : 4
+        },
+        {
+            "name": "dpadRight",
+            "block": 2,
+            "value": "0x20",
+            "analogPin": 15,
+            "joystick" : 5
+        },
+        {
+            "name": "dpadDown",
+            "block": 2,
+            "value" : "0x40",
+            "analogPin" : 16,
+            "joystick" : 6
+        },
+        {
+            "name": "dpadLeft",
+            "block": 2,
+            "value": "0x80",
+            "analogPin": 17,
+            "joystick" : 7
+        },
+        {
+            "name": "psxButton",
+            "block":4,
+            "value": "0x01",
+            "joystick" : 16
+        }
+    ],
+    "motionInputs": [
+            {
+                "name" : "rightLeft",
+                "directionPin" : 41,
+                "valuePin" : 42
+            },
+            {
+                "name" : "forwardBackward",
+                "directionPin" : 43,
+                "valuePin" : 44
+            },
+            {
+                "name" : "upDown",
+                "directionPin" : 45,
+                "valuePin" : 46
+            },
+            {
+                "name" : "yaw",
+                "directionPin" : 47,
+                "valuePin" : 48
+            }
+        ],
+    "status": [
+        {
+            "name" : "charging",
+            "pin" : 29,
+            "states" : [
+                {
+                    "value" : 0,
+                    "state" : "Charging"
+                },
+                {
+                    "value" : 2,
+                    "state" : "Charging"
+                },
+                {
+                    "value" : 3,
+                    "state" : "Not Charging"
+                }
+            ]
+        },
+        {
+            "name" : "battery",
+            "pin" : 30,
+            "states" : [
+                {
+                    "value" : 238,
+                    "state" : "Charging"
+                },
+                {
+                    "value" : 0,
+                    "state" : "No charge"
+                },
+                {
+                    "value" : 1,
+                    "state" : "20%"
+                },
+                {
+                    "value" : 2,
+                    "state" : "40%"
+                },
+                {
+                    "value" : 3,
+                    "state" : "60%"
+                },
+                {
+                    "value" : 4,
+                    "state" : "80%"
+                },
+                {
+                    "value" : 5,
+                    "state" : "100%"
+                }
+            ]
+        },
+        {
+            "name" : "connection",
+            "pin" : 31,
+            "states" : [
+                {
+                    "value" : 18,
+                    "state" : "Usb"
+                },
+                {
+                    "value" : 22,
+                    "state" : "Bluetooth"
+                },
+                {
+                    "value" : 20,
+                    "state" : "Rumbling"
+                }
+            ]
+        }
+    ],
+    "output": {
+        "defaultBuffer":[
+            1, 0, 254, 0, 254, 0, 0, 0, 0, 0, 0,
+            255, 39, 16, 0, 50, 255, 39, 16, 0, 50, 255,
+            39, 16, 0, 50, 255, 39, 16, 0, 50, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0
+        ],
+        "indexes": {
+            "rumbleLeft": 3,
+            "rumbleRight": 5,
+            "led": 10
+        }
+    }
+}

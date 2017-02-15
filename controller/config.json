@@ -1,0 +1,29 @@
+{
+  "keyboard": {
+    "actions": {
+      "primary": 13,
+      "secondary": 67,
+      "start": 83,
+      "menu": 32,
+      "move_up": 38,
+      "move_down": 40,
+      "move_right": 39,
+      "move_left": 37,
+      "quit": "Esc"
+    }
+  },
+  "ds3": {
+    "actions": {
+      "primary": "x",
+      "secondary": "circle",
+      "start": "start",
+      "select": "select",
+      "menu": "psxButton",
+      "move_up": "dpadUp",
+      "move_down": "dpadDown",
+      "move_right": "dpadRight",
+      "move_left": "dpadLeft",
+      "quit": ""
+    }
+  }
+}

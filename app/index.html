@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Morigami</title>
+
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/themify-icons.css">
+  </head>
+  <body>
+    <div id="apps-list"></div>
+    <div id="apps-selector">
+      <div>
+        <span>
+          <i class="ti-angle-left"></i>
+        </span>
+      </div>
+      <div>
+        <span>
+          <i class="ti-angle-right"></i>
+        </span>
+      </div>
+    </div>
+    <div id="app-container" style="display: none;">
+      <webview src="" preload="./renderer/apps.preload.renderer.js"></webview>
+    </div>
+  </body>
+
+<div id="app-mock">
+  <div class="app">
+    <div></div>
+    <div>
+      <img class="app-icon" />
+      <div class="app-name"></div>
+    </div>
+    <div></div>
+  </div>
+</div>
+
+  <!-- Insert this line above script imports  -->
+  <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script>
+    // You can also require other files to run in this process
+    require('../renderer.js');
+    require('./renderer/apps.renderer.js');
+  </script>
+</html>

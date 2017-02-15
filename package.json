@@ -1,0 +1,21 @@
+{
+  "name": "morigami",
+  "version": "1.0.0",
+  "description": "A morigami desktop app",
+  "main": "main.js",
+  "scripts": {
+    "postinstall": "electron-rebuild --force",
+    "start": "electron .",
+    "rebuild": "electron-rebuild --force",
+    "build:rpi": "electron-packager . Morigami --platform=linux --arch=armv7l --out=dist/armv7l"
+  },
+  "author": "Mlgarrido",
+  "devDependencies": {
+    "electron": "^1.4.1",
+    "electron-packager": "^8.5.1",
+    "electron-rebuild": "^1.5.7"
+  },
+  "dependencies": {
+    "node-hid": "^0.5.4"
+  }
+}
