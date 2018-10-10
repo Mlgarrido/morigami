@@ -19,43 +19,21 @@ controller.setExtras = function (options) {
 
   if( 'globalShortcut' in options ) {
     controller.globalShortcut = options.globalShortcut;
+
+    if(controller.app.isReady()) {
+      _configureKeyboard();
+    }
   }
 }
 
 // Keyboard
 
 function _configureKeyboard() {
-  /*controller.globalShortcut.register(config.keyboard.actions.primary, () => {
-    _onAction('keyboard', 'press', config.keyboard.actions.primary);
-  });
-
-  controller.globalShortcut.register(config.keyboard.actions.secondary, () => {
-    _onAction('keyboard', 'press', config.keyboard.actions.secondary);
-  });
-
-  controller.globalShortcut.register(config.keyboard.actions.menu, () => {
-    _onAction('keyboard', 'press', config.keyboard.actions.menu);
-  });
-
-  controller.globalShortcut.register(config.keyboard.actions.move_up, () => {
-    _onAction('keyboard', 'press', config.keyboard.actions.move_up);
-  });
-
-  controller.globalShortcut.register(config.keyboard.actions.move_down, () => {
-    _onAction('keyboard', 'press', config.keyboard.actions.move_down);
-  });
-
-  controller.globalShortcut.register(config.keyboard.actions.move_left, () => {
-    _onAction('keyboard', 'press', config.keyboard.actions.move_left);
-  });
-
-  controller.globalShortcut.register(config.keyboard.actions.move_right, () => {
-    _onAction('keyboard', 'press', config.keyboard.actions.move_right);
-  });*/
-
-  controller.globalShortcut.register(config.keyboard.actions.quit, () => {
-    _onAction('keyboard', 'press', config.keyboard.actions.quit);
-  });
+  if( controller.globalShortcut != null && controller.globalShortcut != undefined ) {
+    controller.globalShortcut.register(config.keyboard.actions.quit, () => {
+      _onAction('keyboard', 'press', config.keyboard.actions.quit);
+    });
+  }
 }
 
 // Dualshock 3

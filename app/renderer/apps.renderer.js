@@ -23,8 +23,7 @@ function _addApp(app) {
   var mock = $('#app-mock > .app').html();
   var appElement = $('<div></div>').addClass('app').attr('id', 'app-' + app.id.replace(/\./g, '')).html(mock);
 
-  $(appElement).css('left', ((apps.length + 1) * 25) + '%');
-  $(appElement).find('div').first().css('background', 'url(data:image/png;base64,' + app.background + ') no-repeat center');
+  $(appElement).find('div').first().css('background', 'url(data:image/png;base64,' + app.background + ') no-repeat fixed center');
   $(appElement).find('.app-icon').attr('src', 'data:image/png;base64,' + app.icon);
   $(appElement).find('.app-name').html(app.name);
 
@@ -152,9 +151,27 @@ controller.on('move_right', 'release', function() {
 });
 
 function _move() {
+  if( selected > 0 ) {
+    $('#main-logo-1').css('opacity', 0);
+    $('#apps-selector > div:nth-of-type(1)').css('opacity', 1);
+  } else {
+    $('#main-logo-1').css('opacity', 1);
+    $('#apps-selector > div:nth-of-type(1)').css('opacity', 0);
+  }
+
+  if( selected < apps.length - 1 ) {
+    $('#main-logo-2').css('opacity', 0);
+    $('#apps-selector > div:nth-of-type(2)').css('opacity', 1);
+  } else {
+    $('#main-logo-2').css('opacity', 1);
+    $('#apps-selector > div:nth-of-type(2)').css('opacity', 0);
+  }
+
   for( var i=0;i < apps.length; i++ ) {
     var appElement = $('#app-' + apps[i].id.replace(/\./g, ''));
-    $(appElement).css('left', (((i + 1) - selected) * 25) + '%');
+    var xPos = $(window).width()/2;
+    xPos = (xPos - 150) + ((i - selected) * 310);
+    $(appElement).css('left', xPos + 'px');
 
     if( selected == i ) {
       $('.app').removeClass('selected');
@@ -200,3 +217,15 @@ const domReady = () => {
 webview.addEventListener('did-start-loading', loadstart);
 webview.addEventListener('did-stop-loading', loadstop);
 webview.addEventListener('dom-ready', domReady);
+
+$(document).ready(function() {
+  _move();
+
+  setTimeout(function() {
+    _move();
+  }, 2500);
+
+  $(window).resize(function() {
+    _move();
+  });
+});

@@ -43,10 +43,16 @@ function createWindow () {
   });
 
   // Libs
+  // Controller
+  var controller = require('./controller/controller.js');
   controller.setExtras({
+    'app': app,
     'mainWindow': mainWindow,
     'globalShortcut': globalShortcut
   });
+
+  // Apps
+  var apps = require('./app/controllers/apps.controller.js');
   apps.initialize(app, ipcMain, mainWindow);
 }
 
@@ -79,13 +85,5 @@ app.on('activate', function () {
   }
 })
 
-// External libs
-
-// Controller
-var controller = require('./controller/controller.js');
-controller.setExtras({
-  'app': app,
-});
-
-// Apps
-var apps = require('./app/controllers/apps.controller.js');
+app.commandLine.appendSwitch('ignore-gpu-blacklist');
+//app.disableHardwareAcceleration();
